@@ -1,3 +1,7 @@
+/*
+ * ping.c - UDP ping/pong client code
+ *          author: <your name>
+ */
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,11 +17,11 @@
 
 
 int main(int argc, char **argv) {
-  int nping = 1, errors = 0;
-  int ch;
-  char *ponghost = strdup("localhost");
-  char *pongport = strdup(PORTNO);
-  int arraysize = 100;
+  int ch, errors = 0;
+  int nping = 1;                        // default packet count
+  char *ponghost = strdup("localhost"); // default host
+  char *pongport = strdup(PORTNO);      // default port
+  int arraysize = 100;                  // default packet size
 
   while ((ch = getopt(argc, argv, "h:n:p:")) != -1) {
     switch (ch) {

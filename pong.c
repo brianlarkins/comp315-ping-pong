@@ -1,3 +1,7 @@
+/*
+ * pong.c - UDP ping/pong server code
+ *          author: <your name>
+ */
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,9 +18,9 @@
 
 
 int main(int argc, char **argv) {
-  int nping = 1;
   int ch;
-  char *pongport = strdup(PORTNO);
+  int nping = 1;                    // default packet count
+  char *pongport = strdup(PORTNO);  // default port
 
   while ((ch = getopt(argc, argv, "h:n:p:")) != -1) {
     switch (ch) {
